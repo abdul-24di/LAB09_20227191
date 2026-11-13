@@ -1,0 +1,50 @@
+STF-PUZZLE SIMPLIFIED VERSION - SOLUCION DEL ROMPECABEZAS (tablero 3x3)
+======================================================================
+
+Notacion: las fichas se numeran 1..8 segun su posicion en la imagen
+ordenada (izquierda a derecha, arriba a abajo). X = casilla vacia.
+Formato en BD (stf_game_board_structure): fila 1 + fila 2 + fila 3.
+
+Tablero ordenado (imagen original): 12345678X
+    1 2 3
+    4 5 6
+    7 8 X
+
+1) SECUENCIA FIJA PARA DESORDENAR (8 pasos, de atras hacia adelante)
+   Se parte del tablero ordenado y se mueve el espacio vacio:
+   arriba, izquierda, arriba, izquierda, abajo, derecha, abajo, derecha
+
+   Paso 1: vacio hacia arriba    (se mueve la ficha 6) -> 12345X786
+   Paso 2: vacio hacia izquierda (se mueve la ficha 5) -> 1234X5786
+   Paso 3: vacio hacia arriba    (se mueve la ficha 2) -> 1X3425786
+   Paso 4: vacio hacia izquierda (se mueve la ficha 1) -> X13425786
+   Paso 5: vacio hacia abajo     (se mueve la ficha 4) -> 413X25786
+   Paso 6: vacio hacia derecha   (se mueve la ficha 2) -> 4132X5786
+   Paso 7: vacio hacia abajo     (se mueve la ficha 8) -> 4132857X6
+   Paso 8: vacio hacia derecha   (se mueve la ficha 6) -> 41328576X
+
+   Tablero desordenado al iniciar el juego: 41328576X
+    4 1 3
+    2 8 5
+    7 6 X
+
+2) SOLUCION: hacer clic en estas fichas, en este orden
+   6 -> 8 -> 2 -> 4 -> 1 -> 2 -> 5 -> 6
+
+   Clic 1: ficha 6 -> 4132857X6
+   Clic 2: ficha 8 -> 4132X5786
+   Clic 3: ficha 2 -> 413X25786
+   Clic 4: ficha 4 -> X13425786
+   Clic 5: ficha 1 -> 1X3425786
+   Clic 6: ficha 2 -> 1234X5786
+   Clic 7: ficha 5 -> 12345X786
+   Clic 8: ficha 6 -> 12345678X
+
+   Tablero final: 12345678X  => Juego terminado !
+    1 2 3
+    4 5 6
+    7 8 X
+
+Nota: para tableros NxN mayores (4x4, 5x5...) se aplica la misma secuencia
+sobre la esquina inferior derecha, y la solucion es la misma idea:
+recorrer la secuencia al reves.

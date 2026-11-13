@@ -1,0 +1,33 @@
+.panel {
+    width: 320px;
+    padding: 12px;
+    border: 2px solid #000;
+    background: #f5f7fa;
+}
+
+.preview {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+}
+
+#dimension { max-width: 200px; }
+
+/* Ocultos al inicio: los muestra jQuery */
+#btnIniciar, #tablero { display: none; }
+
+.tablero {
+    width: 360px;
+    height: 360px;
+    border: 2px solid #000;
+    /* display: grid y columnas/filas los pone jQuery segun N */
+}
+
+.celda { border: 1px solid #000; }
+
+.ficha {
+    cursor: pointer;
+    background-repeat: no-repeat;
+}
+
+.ficha:hover { filter: brightness(1.12); }

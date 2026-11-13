@@ -7,29 +7,19 @@ import jakarta.persistence.*;
 public class StfPuzzle {
     @Id
     @Column(name = "stf_game_board_structure")
-    private String stfBoardStruct;
+    private String stfGameBoardStructure;
 
+    // Imagen como arreglo de bytes (clase 5.3, metodo 2: BLOB)
     @Lob
     @Column(name = "image", columnDefinition = "LONGBLOB")
     private byte[] image;
 
     public StfPuzzle() {
-
     }
 
-    public String getStfBoardStruct() {
-        return stfBoardStruct;
-    }
+    public String getStfGameBoardStructure() { return stfGameBoardStructure; }
+    public void setStfGameBoardStructure(String stfGameBoardStructure) { this.stfGameBoardStructure = stfGameBoardStructure; }
 
-    public void setStfBoardStruct(String stfBoardStruct) {
-        this.stfBoardStruct = stfBoardStruct;
-    }
-
-    public byte[] getImage() {
-        return image;
-    }
-
-    public void setImage(byte[] image) {
-        this.image = image;
-    }
+    public byte[] getImage() { return image; }
+    public void setImage(byte[] image) { this.image = image; }
 }
