@@ -3,10 +3,10 @@ package lab09_20227191.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "stf_puzzle")
+@Table(name = "stf_puzzle_sv")
 public class StfPuzzle {
     @Id
-    @Column(name = "stf_borde")
+    @Column(name = "stf_game_board_structure")
     private String stfBoardStruct;
 
     @Lob
